@@ -3,7 +3,7 @@
 
 Name:             rubygem-%{gem_name}
 Version:          1.1.3
-Release:          1%{?dist}
+Release:          2%{?dist}
 Summary:          rspec-collection_matchers-1.1.3
 Group:            Development/Languages
 License:          MIT
@@ -18,7 +18,7 @@ BuildRequires:    rubygem(rspec-expectations) >= 3
 Requires:         rubygem(rspec-expectations) >= 3
 
 BuildArch: noarch
-%if 0%{?rhel} <= 0
+%if 0%{?rhel}
 Provides:         rubygem(%{gem_name}) = %{version}
 %endif
 
@@ -77,5 +77,8 @@ cp -a .%{gem_dir}/* \
 %{gem_instdir}/spec
 
 %changelog
+* Mon Jan 30 2017 Martin Mágr <mmagr@redhat.com> - 1.1.3-2
+- Fixed RHEL conditional
+
 * Mon Jan 30 2017 Martin Mágr <mmagr@redhat.com> - 1.1.3-1
 - Initial package
